@@ -7,3 +7,5 @@ db/*.db
 /seismic
 Seismic-Data-Visualization-System-main/
 Seismic-Data-Visualization-System-main
+*.csv
+sql/*.csv
