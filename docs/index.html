@@ -13,7 +13,7 @@
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=2">
 </head>
 <body>
 
@@ -155,7 +155,7 @@
             <div id="filterToolbar" class="card card-stat p-3 mb-4">
                 <div class="row g-3 align-items-end">
                     <div class="col-md-3">
-                        <label for="filterEstado" class="form-label fw-semibold">Estado / Entidad:</label>
+                        <label for="filterEstado" class="form-label fw-semibold text-light">Estado / Entidad:</label>
                         <select id="filterEstado" class="form-select">
                             <option value="">Todos los Estados (Nacional)</option>
                             <option value="JAL">Jalisco (JAL)</option>
@@ -172,7 +172,7 @@
                         </select>
                     </div>
                     <div class="col-md-3">
-                        <label for="filterMag" class="form-label fw-semibold">Magnitud Mínima:</label>
+                        <label for="filterMag" class="form-label fw-semibold text-light">Magnitud Mínima:</label>
                         <select id="filterMag" class="form-select">
                             <option value="2.0">Todas (&ge; 2.0)</option>
                             <option value="4.0" selected>Moderados (&ge; 4.0)</option>
@@ -182,7 +182,7 @@
                         </select>
                     </div>
                     <div class="col-md-2">
-                        <label for="filterAnio" class="form-label fw-semibold">Año:</label>
+                        <label for="filterAnio" class="form-label fw-semibold text-light">Año:</label>
                         <select id="filterAnio" class="form-select">
                             <option value="">Histórico</option>
                             <option value="2026">2026</option>
@@ -196,7 +196,7 @@
                         </select>
                     </div>
                     <div class="col-md-2">
-                        <label for="filterLimit" class="form-label fw-semibold">Límite:</label>
+                        <label for="filterLimit" class="form-label fw-semibold text-light">Límite:</label>
                         <select id="filterLimit" class="form-select">
                             <option value="1000">1,000 puntos</option>
                             <option value="5000" selected>5,000 puntos</option>
@@ -221,13 +221,13 @@
                     <div class="d-flex align-items-center gap-3 small flex-wrap">
                         <div class="form-check form-switch m-0">
                             <input class="form-check-input" type="checkbox" id="toggleCiudades" checked>
-                            <label class="form-check-label text-muted fw-semibold" for="toggleCiudades">
+                            <label class="form-check-label text-light fw-semibold" for="toggleCiudades">
                                 <span class="legend-badge" style="background:#38bdf8"></span>Poblaciones (&ge; 50 000 hab)
                             </label>
                         </div>
-                        <span><span class="legend-badge" style="background:#34d399"></span>Verde: 2.0 - 3.9</span>
-                        <span><span class="legend-badge" style="background:#fbbf24"></span>Amarillo: 4.0 - 5.9</span>
-                        <span><span class="legend-badge" style="background:#f43f5e"></span>Rojo: 6.0 o más</span>
+                        <span class="text-light"><span class="legend-badge" style="background:#34d399"></span>Verde: 2.0 - 3.9</span>
+                        <span class="text-light"><span class="legend-badge" style="background:#fbbf24"></span>Amarillo: 4.0 - 5.9</span>
+                        <span class="text-light"><span class="legend-badge" style="background:#f43f5e"></span>Rojo: 6.0 o más</span>
                     </div>
                 </div>
 

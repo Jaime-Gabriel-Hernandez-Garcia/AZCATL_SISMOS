@@ -220,19 +220,37 @@ body {
 .icon-amber { background: rgba(251, 191, 36, 0.15); color: var(--mag-yellow); }
 .icon-red { background: rgba(244, 63, 94, 0.15); color: var(--mag-red); }
 
-/* Form Controls */
+/* Form Controls & Filter Labels */
+.form-label, 
+label,
+#filterToolbar label,
+.card-stat label {
+    color: #f1f5f9 !important;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.4rem;
+    display: inline-block;
+}
+
 .form-select, .form-control {
-    background-color: rgba(15, 23, 42, 0.8) !important;
+    background-color: rgba(15, 23, 42, 0.85) !important;
     border: 1px solid var(--border-color) !important;
-    color: var(--text-main) !important;
+    color: #f8fafc !important;
     border-radius: 12px;
     padding: 0.6rem 1rem;
     font-size: 0.9rem;
 }
 
+.form-select option {
+    background-color: #0f172a !important;
+    color: #f8fafc !important;
+}
+
 .form-select:focus, .form-control:focus {
     border-color: var(--accent-cyan) !important;
     box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2) !important;
+    color: #ffffff !important;
 }
 
 .btn-primary-tactical {
