@@ -1,12 +1,27 @@
 # AZCATL SISMOS: Sistema de Visualización de Datos Sísmicos en México
 
+[![Demo GitHub Pages](https://img.shields.io/badge/Demo_Online-GitHub_Pages-brightgreen.svg)](https://jaime-gabriel-hernandez-garcia.github.io/AZCATL_SISMOS/)
 [![Licencia](https://img.shields.io/badge/Licencia-Software_Libre-blue.svg)](LICENSE)
-[![Docker](https://img.shields.io/badge/Docker_Compose-Soportado-2496ed.svg)](docker-compose.yml)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Data_Warehouse-336791.svg)](db/schema.sql)
+[![Docker](https://img.shields.io/badge/Docker_Compose-PHP_8.2_%2B_PostgreSQL_17-2496ed.svg)](docker-compose.yml)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Data_Warehouse-336791.svg)](sql/00-datawarehouse_tables.sql)
 [![Revista Azcatl](https://img.shields.io/badge/Publicación-Revista_Azcatl_2026-teal.svg)](docs/0604_Azcatl_sismos_villa.pdf)
 
 > **"Cuando México tiembla: la historia contada por los datos"**  
-> Artículo de divulgación científica publicado en la revista *Azcatl* (UAM Azcapotzalco).
+> Artículo de divulgación científica publicado en la revista *Azcatl* (UAM Azcapotzalco, 2026).
+
+---
+
+## 🌐 Demo Online Gratuita (GitHub Pages)
+
+El proyecto cuenta con un módulo estático autónomo desplegado en GitHub Pages, listo para usarse directamente desde cualquier navegador sin necesidad de instalar servidores:
+
+👉 **[https://jaime-gabriel-hernandez-garcia.github.io/AZCATL_SISMOS/](https://jaime-gabriel-hernandez-garcia.github.io/AZCATL_SISMOS/)**
+
+### ¿Cómo activar GitHub Pages en el repositorio?
+1. Ir a **Settings** en GitHub -> pestaña **Pages** (menú lateral izquierdo).
+2. En **Build and deployment** > **Source**, seleccionar: `Deploy from a branch`.
+3. En **Branch**, seleccionar `main` y en la carpeta seleccionar **/docs**.
+4. Hacer clic en **Save**. En un minuto estará publicado en la URL superior.
 
 ---
 
@@ -28,8 +43,8 @@
 
 ## 🎯 Visión del Proyecto
 
-Los sismos son fenómenos naturales impredecibles con alto impacto en el territorio mexicano. Este sistema transforma la información técnica y masiva del **Servicio Sismológico Nacional (SSN)** y la integra con información demográfica y económica del **Instituto Nacional de Estadística y Geografía (INEGI)**, facilitando:
-- Análisis espacial interactivo y cartografía geoespacial.
+Los sismos son fenómenos naturales impredecibles con alto impacto en el territorio mexicano. Este sistema transforma la información masiva del **Servicio Sismológico Nacional (SSN)** y la integra con información demográfica (Censo 2020) y económica del **Instituto Nacional de Estadística y Geografía (INEGI)**, facilitando:
+- Análisis espacial interactivo y cartografía geoespacial abierta.
 - Evaluación de población e infraestructura económica vulnerable cercana a epicentros.
 - Difusión, investigación y fomento de la cultura de prevención de desastres.
 
@@ -37,103 +52,88 @@ Los sismos son fenómenos naturales impredecibles con alto impacto en el territo
 
 ## 🏛️ Arquitectura del Almacén de Datos (Data Warehouse)
 
-El repositorio implementa un modelo dimensional (*Star Schema*) en **PostgreSQL**:
+El repositorio implementa el modelo dimensional (*Star Schema*) en **PostgreSQL 17**:
 
 ```
-           +-------------------+
-           |    dim_tiempo     |
-           +-------------------+
-                     |
-+--------------------+--------------------+
-|                                         |
-|    +-------------------+                |    +-------------------+
-|    |    dim_sismos     |                |    |     dim_zonas     |
-|    +-------------------+                |    +-------------------+
-|              \                          /              |
-|               \                        /               |
-|            +-------------------------------+           |
-+------------|   fact_impacto_sismos_inegi   |-----------+
-             +-------------------------------+
-                             |
-                   +-------------------+
-                   |   dim_economia    |
-                   +-------------------+
+                       +-------------------+
+                       |    dim_tiempo     | (319,593 registros)
+                       +-------------------+
+                                 |
++--------------------------------+--------------------------------+
+|                                                                 |
+|    +-------------------+                       +-------------------+
+|    |    dim_sismos     |                       |     dim_zonas     | (INEGI 2020)
+|    +-------------------+                       +-------------------+
+|      (319,593 sismos)              \                             /           |
+|                                     \                           /            |
+|                               +-------------------------------+              |
++-------------------------------| fact_impacto_sismos_imputed   |--------------+
+                                +-------------------------------+
+                                      (196,577 hechos)
+                                              |
+                                    +-------------------+
+                                    |   dim_economia    | (Censos Económicos)
+                                    +-------------------+
 ```
 
-### Tablas Dimensionales y de Hechos:
-* **`dim_sismos`**: Magnitud, latitud, longitud, profundidad, referencia geográfica y fecha/hora UTC (SSN).
-* **`dim_zonas`**: Entidad federativa, municipio, coordenadas y población total (Censo de Población y Vivienda INEGI 2020).
-* **`dim_economia`**: Unidades económicas, personal ocupado y producción bruta total por entidad (Censos Económicos INEGI).
-* **`dim_tiempo`**: Desglose temporal (año, mes, día, trimestre) para series históricas (1900–2026).
-* **`fact_impacto_sismos_inegi`**: Cruce analítico de sismos sobre poblaciones, radios de afectación (km), distancia al epicentro y nivel de impacto.
+### Tablas Dimensionales y de Hechos (`sql/`):
+* **`00-datawarehouse_tables.sql`**: Definición DDL de las tablas con llaves foráneas e índices.
+* **`01-dim_zonas.sql`**: 32 entidades federativas con población total, femenina y masculina (Censo INEGI 2020).
+* **`02-dim_tiempo.sql`**: 319,593 registros con desglose temporal (fecha, hora UTC, año, mes, día, trimestre) desde 1900.
+* **`03-dim_sismos.sql`**: 319,593 sismos con magnitud, coordenadas, profundidad y referencia geográfica (SSN).
+* **`04-dim_economia.sql`**: Indicadores de producción bruta total, insumos, consumo intermedio y activos fijos por entidad.
+* **`05-fact_impacto_sismos_imputed.sql`**: 196,577 registros de hechos con población afectada, impacto económico y determinación de riesgo proporcional.
 
 ---
 
 ## 🖥️ Módulos de Visualización (Figuras del Artículo)
 
-1. **Inicio (Figura 2)**: Portada institucional con resumen de fuentes de datos, resumen de cobertura y acceso rápido.
+1. **Inicio (Figura 2)**: Portada institucional de bienvenida (`index.php` / `docs/index.html`) con resumen de alcance y acceso directo.
 2. **Sismos (Figura 3)**: Mapa interactivo sobre OpenStreetMap con simbología por magnitud:
    * **Verde**: Magnitud 2.0 a 3.9
    * **Amarillo**: Magnitud 4.0 a 5.9
    * **Rojo**: Magnitud 6.0 o más
    * **Azul**: Poblaciones urbanas con &ge; 50,000 habitantes
-   * **KPIs de consulta**: *Total de Sismos*, *Sismo de Mayor Magnitud* y *Región más Activa*.
-3. **Población (Figura 4)**: Reporte analítico con filtros por estado (ej. Jalisco 2017) con 4 estadísticas clave:
+   * **KPIs inferiores**: *Total de Sismos*, *Sismo de Mayor Magnitud* y *Región más Activa*.
+3. **Población (Figura 4)**: Reporte estadístico por estado/año (ej. Jalisco 2017) con los 4 gráficos clave:
    * Distribución de Magnitudes
    * Correlación Magnitud vs. Profundidad
-   * Sismos por Mes (histograma)
+   * Sismos por Mes (histograma en barras verdes)
    * Población Afectada vs. Magnitud
 4. **Economía**: Análisis de unidades económicas y producción bruta total expuesta en zonas de alta sismicidad.
 5. **Riesgo (Figura 5)**: Mapa de calor de densidad sísmica y representación de radios de dispersión de ondas.
 
 ---
 
-## 🚀 Despliegue y Ejecución
+## 🚀 Despliegue del Módulo Dinámico (PHP 8 + Apache + PostgreSQL)
 
-### Opción 1: Despliegue con Docker Compose (Recomendado)
-
-Solo requiere tener instalado Docker:
+El módulo dinámico replica exactamente el entorno de producción descrito en el artículo:
 
 ```bash
-# Clonar y acceder al directorio
+# 1. Clonar el repositorio
+git clone https://github.com/Jaime-Gabriel-Hernandez-Garcia/AZCATL_SISMOS.git
 cd AZCATL_SISMOS
 
-# Construir e iniciar contenedores
+# 2. Levantar el stack completo con Docker Compose
 docker compose up --build
 ```
 
-El sistema estará accesible inmediatamente en:  
-👉 **http://localhost:3000**
+El servidor web Apache responderá en:  
+👉 **http://localhost** o **http://localhost:3000**
 
-PostgreSQL estará disponible en el puerto `5432` con la base de datos `datawarehouse` inicializada con el esquema y catálogo de datos.
-
-### Opción 2: Ejecución Local en Node.js (Sin Docker)
-
-El sistema cuenta con un motor dual con fallback automático a **SQLite**:
-
-```bash
-# 1. Instalar dependencias
-npm install
-
-# 2. Generar datos semilla (si no existen)
-python etl/generate_seed_data.py
-
-# 3. Iniciar servidor
-node src/server.js
-```
-
-Abrir navegador en `http://localhost:3000`.
+PostgreSQL 17 estará inicializado automáticamente con los scripts de `sql/` en el puerto `5432` con la base de datos `datawarehouse`.
 
 ---
 
-## 🛠️ Tecnologías Abiertas Utilizadas
+## 🛠️ Tecnologías Oficiales Utilizadas
 
-* **Base de Datos:** PostgreSQL 15 / SQLite3
-* **Backend:** Node.js, Express, pg
+* **Servidor Web:** Apache 2.4 con módulo Rewrite habilitado
+* **Lenguaje Backend:** PHP 8.2 (extensiones `pdo_pgsql`, `pgsql`)
+* **Base de Datos:** PostgreSQL 17 (Data Warehouse dimensional)
 * **Frontend:** HTML5, CSS3, JavaScript Vanilla, Bootstrap 5
 * **Cartografía & Visualizaciones:** OpenStreetMap, Leaflet JS, Leaflet Heat, Chart.js
-* **Procesamiento ETL:** Python 3 (validación de coordenadas, limpieza de datos y generación SQL)
 * **Contenerización:** Docker & Docker Compose
+* **Demo Estática:** GitHub Pages (en `/docs`)
 
 ---
 

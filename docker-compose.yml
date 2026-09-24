@@ -1,45 +1,56 @@
 services:
-  db:
-    image: postgres:15-alpine
-    container_name: sismos-db
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: azcatl-sismos-web
     restart: always
+    ports:
+      - "80:80"
+      - "3000:80"
+    volumes:
+      - ./src:/var/www/html:rw
     environment:
-      POSTGRES_DB: datawarehouse
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: secretpassword
+      - POSTGRES_HOST=db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=datawarehouse
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - app-network
+
+  db:
+    image: postgres:17
+    container_name: azcatl-sismos-db
+    restart: always
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./db/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql:ro
-      - ./db/import_data.sql:/docker-entrypoint-initdb.d/02_import_data.sql:ro
+      - ./sql/00-datawarehouse_tables.sql:/docker-entrypoint-initdb.d/00-datawarehouse_tables.sql:ro
+      - ./sql/01-dim_zonas.sql:/docker-entrypoint-initdb.d/01-dim_zonas.sql:ro
+      - ./sql/02-dim_tiempo.sql:/docker-entrypoint-initdb.d/02-dim_tiempo.sql:ro
+      - ./sql/03-dim_sismos.sql:/docker-entrypoint-initdb.d/03-dim_sismos.sql:ro
+      - ./sql/04-dim_economia.sql:/docker-entrypoint-initdb.d/04-dim_economia.sql:ro
+      - ./sql/05-fact_impacto_sismos_imputed.sql:/docker-entrypoint-initdb.d/05-fact_impacto_sismos_imputed.sql:ro
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=datawarehouse
+      - POSTGRES_HOST_AUTH_METHOD=trust
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres -d datawarehouse"]
-      interval: 5s
+      interval: 10s
       timeout: 5s
       retries: 5
+    networks:
+      - app-network
 
-  web:
-    build:
-      context: .
-      dockerfile: docker/Dockerfile.node
-    container_name: sismos-web
-    restart: always
-    ports:
-      - "3000:3000"
-    environment:
-      PORT: 3000
-      DB_HOST: db
-      DB_PORT: 5432
-      DB_NAME: datawarehouse
-      DB_USER: postgres
-      DB_PASS: secretpassword
-    volumes:
-      - .:/app
-      - /app/node_modules
-    depends_on:
-      db:
-        condition: service_healthy
+networks:
+  app-network:
+    driver: bridge
 
 volumes:
   postgres_data:

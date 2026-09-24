@@ -1,0 +1,38 @@
+{
+  "JAL_2017": {
+    "total_sismos": 47,
+    "max_magnitud": 5.6,
+    "poblacion_afectada": 5497428,
+    "sismo_mayor_impacto": {
+      "magnitud": 5.6,
+      "fecha": "2017-11-03",
+      "referencia": "214 km al SUROESTE de CIHUATLAN, JAL",
+      "profundidad": 10
+    },
+    "distribucion": {
+      "2.0-3.9": 6,
+      "4.0-5.9": 41,
+      "6.0+": 0
+    },
+    "sismos_por_mes": {
+      "Ene": 1,
+      "Feb": 2,
+      "Mar": 3,
+      "Abr": 2,
+      "May": 3,
+      "Jun": 2,
+      "Jul": 3,
+      "Ago": 6,
+      "Sep": 8,
+      "Oct": 5,
+      "Nov": 8,
+      "Dic": 4
+    }
+  },
+  "NACIONAL_2014": {
+    "total_sismos": 500,
+    "max_magnitud": 6.3,
+    "region_mas_activa": "73 km al SUROESTE de CIHUATLAN, JAL",
+    "poblacion_afectada": 126014024
+  }
+}

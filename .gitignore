@@ -4,3 +4,6 @@
 *.db
 db/*.db
 !db/sismos.db
+/seismic
+Seismic-Data-Visualization-System-main/
+Seismic-Data-Visualization-System-main

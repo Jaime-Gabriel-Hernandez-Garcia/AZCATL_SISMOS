@@ -1,0 +1,322 @@
+[
+  {
+    "id": 0,
+    "entidad": "Aguascalientes",
+    "unidades_economicas": 5797,
+    "produccion_bruta_total": 2409748.96,
+    "insumos_utilizados": 2354627.28,
+    "consumo_intermedio": 3278117.14,
+    "valor_agregado": 227075.87,
+    "activos_fijos": 1205720.6
+  },
+  {
+    "id": 1,
+    "entidad": "Baja California",
+    "unidades_economicas": 14730,
+    "produccion_bruta_total": 4678905.81,
+    "insumos_utilizados": 4559686.0,
+    "consumo_intermedio": 7017346.22,
+    "valor_agregado": 326506.39,
+    "activos_fijos": 2770093.78
+  },
+  {
+    "id": 2,
+    "entidad": "Baja California Sur",
+    "unidades_economicas": 11949,
+    "produccion_bruta_total": 846963.78,
+    "insumos_utilizados": 1035531.22,
+    "consumo_intermedio": 1455687.45,
+    "valor_agregado": 162412.21,
+    "activos_fijos": 1093755.96
+  },
+  {
+    "id": 3,
+    "entidad": "Campeche",
+    "unidades_economicas": 22664,
+    "produccion_bruta_total": 546337.59,
+    "insumos_utilizados": 624178.3,
+    "consumo_intermedio": 926854.37,
+    "valor_agregado": 260111.07,
+    "activos_fijos": 949274.97
+  },
+  {
+    "id": 4,
+    "entidad": "Chiapas",
+    "unidades_economicas": 258888,
+    "produccion_bruta_total": 1167025.52,
+    "insumos_utilizados": 1701320.93,
+    "consumo_intermedio": 2304757.03,
+    "valor_agregado": 1787579.36,
+    "activos_fijos": 3332473.77
+  },
+  {
+    "id": 5,
+    "entidad": "Chihuahua",
+    "unidades_economicas": 129336,
+    "produccion_bruta_total": 4253551.74,
+    "insumos_utilizados": 4282019.5,
+    "consumo_intermedio": 6544745.76,
+    "valor_agregado": 685450.51,
+    "activos_fijos": 3560522.69
+  },
+  {
+    "id": 6,
+    "entidad": "Ciudad de México",
+    "unidades_economicas": 241974,
+    "produccion_bruta_total": 35386973.52,
+    "insumos_utilizados": 49700230.43,
+    "consumo_intermedio": 66056505.23,
+    "valor_agregado": 1247806.98,
+    "activos_fijos": 9618935.94
+  },
+  {
+    "id": 7,
+    "entidad": "Coahuila de Zaragoza",
+    "unidades_economicas": 75495,
+    "produccion_bruta_total": 7835937.39,
+    "insumos_utilizados": 6778440.48,
+    "consumo_intermedio": 9696014.2,
+    "valor_agregado": 689608.62,
+    "activos_fijos": 3667015.24
+  },
+  {
+    "id": 8,
+    "entidad": "Colima",
+    "unidades_economicas": 35154,
+    "produccion_bruta_total": 597219.92,
+    "insumos_utilizados": 824255.32,
+    "consumo_intermedio": 1138386.95,
+    "valor_agregado": 241970.91,
+    "activos_fijos": 1229196.45
+  },
+  {
+    "id": 9,
+    "entidad": "Durango",
+    "unidades_economicas": 107460,
+    "produccion_bruta_total": 1388069.1,
+    "insumos_utilizados": 1546779.0,
+    "consumo_intermedio": 2179533.46,
+    "valor_agregado": 563528.58,
+    "activos_fijos": 1571108.92
+  },
+  {
+    "id": 10,
+    "entidad": "Guanajuato",
+    "unidades_economicas": 329131,
+    "produccion_bruta_total": 8969536.94,
+    "insumos_utilizados": 8777853.44,
+    "consumo_intermedio": 12118996.56,
+    "valor_agregado": 1392227.33,
+    "activos_fijos": 5844612.22
+  },
+  {
+    "id": 11,
+    "entidad": "Guerrero",
+    "unidades_economicas": 306528,
+    "produccion_bruta_total": 845426.59,
+    "insumos_utilizados": 1126470.71,
+    "consumo_intermedio": 1613744.08,
+    "valor_agregado": 1326614.74,
+    "activos_fijos": 2351152.23
+  },
+  {
+    "id": 12,
+    "entidad": "Hidalgo",
+    "unidades_economicas": 356824,
+    "produccion_bruta_total": 2573586.18,
+    "insumos_utilizados": 2793963.46,
+    "consumo_intermedio": 3487997.35,
+    "valor_agregado": 1225654.91,
+    "activos_fijos": 3453369.89
+  },
+  {
+    "id": 13,
+    "entidad": "Jalisco",
+    "unidades_economicas": 707616,
+    "produccion_bruta_total": 10854723.37,
+    "insumos_utilizados": 11567043.61,
+    "consumo_intermedio": 16387070.49,
+    "valor_agregado": 2295996.16,
+    "activos_fijos": 8473100.26
+  },
+  {
+    "id": 14,
+    "entidad": "Michoacán de Ocampo",
+    "unidades_economicas": 700704,
+    "produccion_bruta_total": 2308032.98,
+    "insumos_utilizados": 2935884.21,
+    "consumo_intermedio": 4106562.23,
+    "valor_agregado": 2006129.69,
+    "activos_fijos": 5245327.65
+  },
+  {
+    "id": 15,
+    "entidad": "Morelos",
+    "unidades_economicas": 273003,
+    "produccion_bruta_total": 1836204.51,
+    "insumos_utilizados": 1884934.99,
+    "consumo_intermedio": 2616638.57,
+    "valor_agregado": 710356.26,
+    "activos_fijos": 2221052.31
+  },
+  {
+    "id": 16,
+    "entidad": "México",
+    "unidades_economicas": 1010400,
+    "produccion_bruta_total": 13078293.1,
+    "insumos_utilizados": 13857960.14,
+    "consumo_intermedio": 19477721.33,
+    "valor_agregado": 3253077.59,
+    "activos_fijos": 11747402.77
+  },
+  {
+    "id": 17,
+    "entidad": "Nayarit",
+    "unidades_economicas": 173448,
+    "produccion_bruta_total": 619927.11,
+    "insumos_utilizados": 763989.37,
+    "consumo_intermedio": 1068679.32,
+    "valor_agregado": 426822.34,
+    "activos_fijos": 1445986.22
+  },
+  {
+    "id": 18,
+    "entidad": "Nuevo León",
+    "unidades_economicas": 401603,
+    "produccion_bruta_total": 16042716.07,
+    "insumos_utilizados": 15622570.58,
+    "consumo_intermedio": 22274960.89,
+    "valor_agregado": 928366.18,
+    "activos_fijos": 6279032.35
+  },
+  {
+    "id": 19,
+    "entidad": "Oaxaca",
+    "unidades_economicas": 1162440,
+    "produccion_bruta_total": 1333011.04,
+    "insumos_utilizados": 1702915.86,
+    "consumo_intermedio": 2284019.26,
+    "valor_agregado": 3198630.38,
+    "activos_fijos": 4156730.21
+  },
+  {
+    "id": 20,
+    "entidad": "Puebla",
+    "unidades_economicas": 1102626,
+    "produccion_bruta_total": 5256714.7,
+    "insumos_utilizados": 5959352.31,
+    "consumo_intermedio": 7959936.21,
+    "valor_agregado": 2501811.95,
+    "activos_fijos": 5567158.65
+  },
+  {
+    "id": 21,
+    "entidad": "Querétaro de Arteaga",
+    "unidades_economicas": 226864,
+    "produccion_bruta_total": 5462014.43,
+    "insumos_utilizados": 5277789.6,
+    "consumo_intermedio": 7235993.12,
+    "valor_agregado": 431138.21,
+    "activos_fijos": 2644088.38
+  },
+  {
+    "id": 22,
+    "entidad": "Quintana Roo",
+    "unidades_economicas": 163461,
+    "produccion_bruta_total": 2178560.38,
+    "insumos_utilizados": 2282083.07,
+    "consumo_intermedio": 3362055.39,
+    "valor_agregado": 328982.54,
+    "activos_fijos": 1693774.14
+  },
+  {
+    "id": 23,
+    "entidad": "San Luis Potosí",
+    "unidades_economicas": 418872,
+    "produccion_bruta_total": 4165404.47,
+    "insumos_utilizados": 3749618.54,
+    "consumo_intermedio": 5451516.09,
+    "valor_agregado": 737611.66,
+    "activos_fijos": 2708583.25
+  },
+  {
+    "id": 24,
+    "entidad": "Sinaloa",
+    "unidades_economicas": 312850,
+    "produccion_bruta_total": 2229810.66,
+    "insumos_utilizados": 3236412.89,
+    "consumo_intermedio": 4385030.83,
+    "valor_agregado": 514623.01,
+    "activos_fijos": 2761578.79
+  },
+  {
+    "id": 25,
+    "entidad": "Sonora",
+    "unidades_economicas": 464620,
+    "produccion_bruta_total": 4086788.04,
+    "insumos_utilizados": 4081909.79,
+    "consumo_intermedio": 6163073.62,
+    "valor_agregado": 776776.98,
+    "activos_fijos": 4127521.66
+  },
+  {
+    "id": 26,
+    "entidad": "Tabasco",
+    "unidades_economicas": 294084,
+    "produccion_bruta_total": 1232929.92,
+    "insumos_utilizados": 1576484.15,
+    "consumo_intermedio": 2111612.78,
+    "valor_agregado": 536153.7,
+    "activos_fijos": 1880260.05
+  },
+  {
+    "id": 27,
+    "entidad": "Tamaulipas",
+    "unidades_economicas": 465976,
+    "produccion_bruta_total": 3846449.61,
+    "insumos_utilizados": 3823051.35,
+    "consumo_intermedio": 5669942.87,
+    "valor_agregado": 792756.43,
+    "activos_fijos": 3655272.33
+  },
+  {
+    "id": 28,
+    "entidad": "Tlaxcala",
+    "unidades_economicas": 512923,
+    "produccion_bruta_total": 582931.07,
+    "insumos_utilizados": 611496.09,
+    "consumo_intermedio": 850190.85,
+    "valor_agregado": 781483.82,
+    "activos_fijos": 1624202.5
+  },
+  {
+    "id": 29,
+    "entidad": "Veracruz de Ignacio de la Llave",
+    "unidades_economicas": 1834080,
+    "produccion_bruta_total": 4806547.8,
+    "insumos_utilizados": 5847124.06,
+    "consumo_intermedio": 7575613.43,
+    "valor_agregado": 2825625.17,
+    "activos_fijos": 7147517.75
+  },
+  {
+    "id": 30,
+    "entidad": "Yucatán",
+    "unidades_economicas": 657262,
+    "produccion_bruta_total": 1722465.74,
+    "insumos_utilizados": 2220722.71,
+    "consumo_intermedio": 2994297.22,
+    "valor_agregado": 1313844.93,
+    "activos_fijos": 1946367.01
+  },
+  {
+    "id": 31,
+    "entidad": "Zacatecas",
+    "unidades_economicas": 529024,
+    "produccion_bruta_total": 771667.06,
+    "insumos_utilizados": 840295.55,
+    "consumo_intermedio": 1257645.27,
+    "valor_agregado": 699464.74,
+    "activos_fijos": 1960529.35
+  }
+]

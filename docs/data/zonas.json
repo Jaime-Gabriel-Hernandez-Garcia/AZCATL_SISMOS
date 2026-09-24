@@ -1,0 +1,258 @@
+[
+  {
+    "id": 0,
+    "clave": "01",
+    "entidad": "Aguascalientes",
+    "poblacion": 1425607,
+    "lat": 21.8833,
+    "lon": -102.2833
+  },
+  {
+    "id": 1,
+    "clave": "02",
+    "entidad": "Baja California",
+    "poblacion": 3769020,
+    "lat": 32.6519,
+    "lon": -115.4683
+  },
+  {
+    "id": 2,
+    "clave": "03",
+    "entidad": "Baja California Sur",
+    "poblacion": 798447,
+    "lat": 24.1444,
+    "lon": -110.3
+  },
+  {
+    "id": 3,
+    "clave": "04",
+    "entidad": "Campeche",
+    "poblacion": 928363,
+    "lat": 19.8439,
+    "lon": -90.525
+  },
+  {
+    "id": 4,
+    "clave": "05",
+    "entidad": "Coahuila de Zaragoza",
+    "poblacion": 3146771,
+    "lat": 25.426,
+    "lon": -100.9958
+  },
+  {
+    "id": 5,
+    "clave": "06",
+    "entidad": "Colima",
+    "poblacion": 731391,
+    "lat": 19.2452,
+    "lon": -103.7247
+  },
+  {
+    "id": 6,
+    "clave": "07",
+    "entidad": "Chiapas",
+    "poblacion": 5543828,
+    "lat": 16.7597,
+    "lon": -93.1131
+  },
+  {
+    "id": 7,
+    "clave": "08",
+    "entidad": "Chihuahua",
+    "poblacion": 3741869,
+    "lat": 28.6353,
+    "lon": -106.0889
+  },
+  {
+    "id": 8,
+    "clave": "09",
+    "entidad": "Ciudad de Mexico",
+    "poblacion": 9209944,
+    "lat": 19.4326,
+    "lon": -99.1332
+  },
+  {
+    "id": 9,
+    "clave": "10",
+    "entidad": "Durango",
+    "poblacion": 1832650,
+    "lat": 24.0203,
+    "lon": -104.6572
+  },
+  {
+    "id": 10,
+    "clave": "11",
+    "entidad": "Guanajuato",
+    "poblacion": 6166934,
+    "lat": 21.019,
+    "lon": -101.2574
+  },
+  {
+    "id": 11,
+    "clave": "12",
+    "entidad": "Guerrero",
+    "poblacion": 3540685,
+    "lat": 17.5506,
+    "lon": -99.5005
+  },
+  {
+    "id": 12,
+    "clave": "13",
+    "entidad": "Hidalgo",
+    "poblacion": 3082841,
+    "lat": 20.0911,
+    "lon": -98.7624
+  },
+  {
+    "id": 13,
+    "clave": "14",
+    "entidad": "Jalisco",
+    "poblacion": 8348151,
+    "lat": 20.6667,
+    "lon": -103.3333
+  },
+  {
+    "id": 14,
+    "clave": "15",
+    "entidad": "Mexico",
+    "poblacion": 16992418,
+    "lat": 19.36,
+    "lon": -99.63
+  },
+  {
+    "id": 15,
+    "clave": "16",
+    "entidad": "Michoacan de Ocampo",
+    "poblacion": 4748846,
+    "lat": 19.701,
+    "lon": -101.1924
+  },
+  {
+    "id": 16,
+    "clave": "17",
+    "entidad": "Morelos",
+    "poblacion": 1971520,
+    "lat": 18.9186,
+    "lon": -99.2308
+  },
+  {
+    "id": 17,
+    "clave": "18",
+    "entidad": "Nayarit",
+    "poblacion": 1235456,
+    "lat": 21.5095,
+    "lon": -104.8957
+  },
+  {
+    "id": 18,
+    "clave": "19",
+    "entidad": "Nuevo Leon",
+    "poblacion": 5784442,
+    "lat": 25.6751,
+    "lon": -100.3185
+  },
+  {
+    "id": 19,
+    "clave": "20",
+    "entidad": "Oaxaca",
+    "poblacion": 4132148,
+    "lat": 17.0732,
+    "lon": -96.7266
+  },
+  {
+    "id": 20,
+    "clave": "21",
+    "entidad": "Puebla",
+    "poblacion": 6583278,
+    "lat": 19.0434,
+    "lon": -98.198
+  },
+  {
+    "id": 21,
+    "clave": "22",
+    "entidad": "Queretaro",
+    "poblacion": 2368467,
+    "lat": 20.5888,
+    "lon": -100.3899
+  },
+  {
+    "id": 22,
+    "clave": "23",
+    "entidad": "Quintana Roo",
+    "poblacion": 1857985,
+    "lat": 21.1619,
+    "lon": -86.8515
+  },
+  {
+    "id": 23,
+    "clave": "24",
+    "entidad": "San Luis Potosi",
+    "poblacion": 2822255,
+    "lat": 22.1498,
+    "lon": -100.9751
+  },
+  {
+    "id": 24,
+    "clave": "25",
+    "entidad": "Sinaloa",
+    "poblacion": 3026943,
+    "lat": 24.8042,
+    "lon": -107.4318
+  },
+  {
+    "id": 25,
+    "clave": "26",
+    "entidad": "Sonora",
+    "poblacion": 2944840,
+    "lat": 29.0892,
+    "lon": -110.9613
+  },
+  {
+    "id": 26,
+    "clave": "27",
+    "entidad": "Tabasco",
+    "poblacion": 2402598,
+    "lat": 17.9869,
+    "lon": -92.9303
+  },
+  {
+    "id": 27,
+    "clave": "28",
+    "entidad": "Tamaulipas",
+    "poblacion": 3527735,
+    "lat": 23.7369,
+    "lon": -99.1411
+  },
+  {
+    "id": 28,
+    "clave": "29",
+    "entidad": "Tlaxcala",
+    "poblacion": 1342977,
+    "lat": 19.3181,
+    "lon": -98.2375
+  },
+  {
+    "id": 29,
+    "clave": "30",
+    "entidad": "Veracruz de Ignacio de la Llave",
+    "poblacion": 8062579,
+    "lat": 19.1809,
+    "lon": -96.1429
+  },
+  {
+    "id": 30,
+    "clave": "31",
+    "entidad": "Yucatan",
+    "poblacion": 2320898,
+    "lat": 20.9754,
+    "lon": -89.6167
+  },
+  {
+    "id": 31,
+    "clave": "32",
+    "entidad": "Zacatecas",
+    "poblacion": 1622138,
+    "lat": 22.7709,
+    "lon": -102.5832
+  }
+]
