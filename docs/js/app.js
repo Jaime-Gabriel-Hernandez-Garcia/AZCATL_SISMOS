@@ -94,10 +94,9 @@ async function loadStaticData() {
 
 function initMaps() {
     map = L.map('map', { renderer: L.canvas({ padding: 0.5 }) }).setView([23.6345, -102.5528], 5);
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 18,
-        subdomains: 'abcd',
-        attribution: '&copy; OpenStreetMap &copy; CARTO'
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
     markersLayer = L.layerGroup().addTo(map);
@@ -107,10 +106,9 @@ function initMaps() {
 
 function initMapRiesgo() {
     mapRiesgo = L.map('mapRiesgo').setView([20.0, -102.0], 6);
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 18,
-        subdomains: 'abcd',
-        attribution: '&copy; OpenStreetMap &copy; CARTO'
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(mapRiesgo);
 
     circlesLayerRiesgo = L.layerGroup().addTo(mapRiesgo);
@@ -242,6 +240,7 @@ function renderTable(sismos) {
 function updateMapKPIs(sismos) {
     const anio = document.getElementById('filterAnio').value;
     const estado = document.getElementById('filterEstado').value;
+    const magMin = parseFloat(document.getElementById('filterMag').value) || 2.0;
 
     let total = sismos.length;
     let maxMag = 0;
@@ -267,11 +266,19 @@ function updateMapKPIs(sismos) {
         }
     }
 
-    // Coincidencia con Figura 3 si 2014
-    if (anio === '2014' && !estado) {
+    // Catálogo completo SSN sin filtro específico
+    if (!anio && !estado && magMin <= 2.0) {
+        total = 319592;
+        maxMag = 8.2;
+        document.getElementById('mapStatTotalSub').innerText = '319,592 en catálogo SSN (+33k renderizados)';
+    } else if (anio === '2014' && !estado) {
+        // Coincidencia con Figura 3 para 2014
         topRef = '73 km al SUROESTE de CIHUATLAN, JAL';
         maxMag = 6.3;
         total = 500;
+        document.getElementById('mapStatTotalSub').innerText = 'Eventos registrados en el período (Fig. 3)';
+    } else {
+        document.getElementById('mapStatTotalSub').innerText = `${total.toLocaleString()} eventos filtrados`;
     }
 
     document.getElementById('mapStatTotal').innerText = total.toLocaleString();
